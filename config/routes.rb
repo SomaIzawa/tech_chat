@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  get "/", to: "questions#index"
+  root to: "questions#index"
+  resources :questions, only: [:index, :new, :create]
 end
