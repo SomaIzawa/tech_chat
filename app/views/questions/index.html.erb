@@ -2,11 +2,29 @@
   質問ページ
 </h1>
 
-<div>
-  <h2>タイトル:</h2>
-  <p>ここには文章が入ります</p>
-  <dl>
-    <dt>投稿者名</dt>
-    <dd>テスト</dd>
-  </dl>
+<% @questions.each do |question| %>
+  <div class="card flex">
+    <div class="comment_count">
+      <span>comment</span>
+      <span>0</span>
+    </div>
+    <div>
+      <dl>
+        <dt>タイトル</dt>
+        <dd><%= question.title %></dd>
+      </dl>
+      <dl>
+        <dt>質問内容</dt>
+        <dd><%= question.content %></dd>
+      </dl>
+      <dl>
+        <dt>投稿者名</dt>
+        <dd><%= question.name %></dd>
+      </dl>
+    </div>
+  </div>
+<% end %>
+
+<div class="btn_link_w mt-20">
+  <%= link_to "新規投稿", new_question_path %>
 </div>

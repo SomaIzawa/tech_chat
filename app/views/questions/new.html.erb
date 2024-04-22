@@ -1,0 +1,38 @@
+<h1>
+  新規質問投稿
+</h1>
+
+<%= form_with(model: @question, local:true) do |form| %>
+  <dl>
+    <dt>
+      <label for="title">タイトル</label>
+    </dt>
+    <dd>
+      <%= form.text_field :title, placeHolder: "Title", id: "title" %>
+    </dd>
+  </dl>
+  <dl>
+    <dt>
+      <label for="name">名前</label>
+    </dt>
+    <dd>
+      <%= form.text_field :name, placeHolder: "Name", id: "name" %>
+    </dd>
+  </dl>
+  <dl>
+    <dt>
+      <label for="content">コンテンツ</label>
+    </dt>
+    <dd>
+      <%= form.text_area :content, placeHolder: "Contents", id: "content", rows:"5" %>
+    </dd>
+  </dl>
+  <div class="flex mt-20">
+    <div class="btn_link_w">
+      <%= link_to "戻る", root_path %>
+    </div>
+    <div class="btn_link">
+      <%= form.submit "投稿する" %>
+    </div>
+  </div>
+<% end %>
