@@ -14,8 +14,9 @@
   font-weight: 800;
 }
 
-.card dl > dd {
+.card dl > dd, .card p {
   font-size: 16px;
+  white-space: pre-wrap;
 }
 
 .comment_count {

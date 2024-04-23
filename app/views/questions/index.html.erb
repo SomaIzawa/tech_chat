@@ -6,12 +6,12 @@
   <div class="card flex">
     <div class="comment_count">
       <span>comment</span>
-      <span>0</span>
+      <span><%= question.comments.count %></span>
     </div>
     <div>
       <dl>
         <dt>タイトル</dt>
-        <dd><%= question.title %></dd>
+        <dd><%= link_to question.title, question_path(question.id) %></dd>
       </dl>
       <dl>
         <dt>質問内容</dt>

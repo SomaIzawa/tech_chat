@@ -1,0 +1,43 @@
+<h1>
+  <%= @question.user.name %>さんの質問
+</h1>
+<div class="card flex">
+  <div class="comment_count">
+    <span>comment</span>
+    <span><%= @comments.count %></span>
+  </div>
+  <div>
+    <dl>
+      <dt>タイトル</dt>
+      <dd><%= @question.title %></dd>
+    </dl>
+    <dl>
+      <dt>質問内容</dt>
+      <dd><%= @question.content %></dd>
+    </dl>
+    <dl>
+      <dt>投稿者名</dt>
+      <dd><%= @question.user.name %></dd>
+    </dl>
+  </div>
+</div>
+<h2>コメント一覧</h2>
+<% @comments.each do |comment| %>
+  <div class="card">
+    <p><%= comment.comment %></p>
+  </div>
+<% end %>
+<div class="btn_link_w mt-20">
+  <%= link_to "ホームに戻る", root_path %>
+</div>
+<%= form_with(model: [@question, @comment], local:true) do |form| %>
+<dl>
+  <dt><label for="comment">コメント</label></dt>
+  <dd>
+    <%= form.text_area :comment, placeHolder: "コメント内容を記述して下さい", id: "comment", rows: "5" %>
+  </dd>
+  <div class="btn_link">
+    <%= form.submit "投稿する" %>
+  </div>
+</dl>
+<% end %>
