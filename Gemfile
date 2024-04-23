@@ -74,3 +74,5 @@ end
 gem 'pry-rails'
 
 gem "solargraph"
+
+gem "devise"

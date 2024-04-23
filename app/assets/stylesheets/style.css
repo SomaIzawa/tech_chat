@@ -192,9 +192,14 @@ form > dl > dd > input::placeholder, form > dl > dd > textarea::placeholder {
 
 .flex {
   display: flex;
+  align-items: center;
   gap: 12px;
 }
 
 .mt-20{
   margin-top: 20px;
+}
+
+.header_msg {
+  font-size: 16px;
 }

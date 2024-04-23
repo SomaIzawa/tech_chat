@@ -12,9 +12,21 @@
 
   <body>
     <header>
-      Questions
-      <div class="btn_link_w">
-        <%= link_to "新規投稿", new_question_path %>
+      Tech Chat
+      <div class="flex">
+        <% if user_signed_in? %>
+          <p class="header_msg">こんにちは、<%= current_user.name %>さん</p>
+          <div class="btn_link_w">
+            <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete } %>
+          </div>  
+        <% else %>
+          <div class="btn_link_w">
+            <%= link_to "ログイン", new_user_session_path %>
+          </div>  
+        <% end %>
+        <div class="btn_link_w">
+          <%= link_to "新規投稿", new_question_path %>
+        </div>
       </div>
     </header>
     <main>
