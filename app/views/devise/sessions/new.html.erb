@@ -1,0 +1,23 @@
+<h1>ログイン</h1>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <dl>
+    <dt>
+      <label for="email"><%= f.label :email %></label>
+    </dt>
+    <dd>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", id:"email" %>
+    </dd>
+  </dl>
+  <dl>
+    <dt>
+      <label for="password"><%= f.label :password %><br /></label>
+    </dt>
+    <dd>
+      <%= f.password_field :password, autocomplete: "current-password", id:"password" %>
+    </dd>
+  </dl>
+  <div class="btn_link">
+    <%= f.submit "Log in" %>
+  </div>
+<% end %>
